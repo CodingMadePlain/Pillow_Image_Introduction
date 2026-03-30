@@ -6,38 +6,18 @@ No prior programming experience is required.
 
 ## What You Will Learn
 
-This course starts with the fundamentals of image manipulation using the Pillow library, how to write code by hand and understand the syntax and workings of the code. 
+This course begins with the fundamentals of image manipulation using the Pillow library — writing code by hand so you understand exactly what it does and why.
 
-We then move on to using AI tools to generate code for more complex tasks.
-The first lesson is essential is it gives you an understanding of how to write the code yourself, this should equip you to be able to assess and query the code that AI generates later on in the course.
+You'll then use AI tools to generate code for more complex tasks. Starting with the manual approach is essential: it gives you the foundation to critically evaluate and question what AI produces.
 
- By the end, you will be able to automate repetitive image tasks that currently eat into your editing time, and still eunderstand what code is being gegenerated for you..
-
-**Part 1 — Understanding the Code**
-
-- Opening images and reading their properties
-- Resizing images with `resize()` and `thumbnail()` and understanding when to use each
-- Reading, filtering, and writing EXIF metadata
-- Key Python patterns you need to recognise when working with AI-generated code
-
-**Part 2 — Working with AI**
-
-- Batch processing and renaming files
-- Watermarking
-- Image adjustments (brightness, contrast, sharpness, colour balance)
-- Format conversion
-- Contact sheets
-- Image comparison
-- Colour analysis
-- Social media templates
-- PDF portfolio creation
+By the end, you'll be able to automate repetitive image tasks and confidently understand the code doing the work.
 
 ## Prerequisites
 
-- **Python 3.10+** installed on your system
-- **VS Code** with the Python extension
-- **Git Bash** terminal (provides a consistent experience on both Mac and Windows)
-- A few of your own photos taken with a phone or camera (JPEG format with EXIF data)
+1. **VS Code** with the Python extension - `https://code.visualstudio.com/`
+2. **Python 3.10+** installed on your system -`python.org`
+3. **Git Bash** terminal (provides a consistent experience on both Mac and Windows) - `git-scm.com/`
+4. VS Code Python Extension
 
 ## Project Structure
 
@@ -45,7 +25,7 @@ The first lesson is essential is it gives you an understanding of how to write t
 project-root/
 ├── AGENTS.md          # AI agent instructions for code generation
 ├── README.md          # This file
-├── venv/              # Python virtual environment
+├── venv/*             # Python virtual environment
 ├── large_assets/      # Your source images (input)
 ├── large_images/      # Images produced by scripts (output)
 ├── tutorials/         # Tutorial documents
@@ -53,26 +33,34 @@ project-root/
 ```
 
 ## Getting Started
+1. Create a folder for this project - `pillow_Image_Introduction`
+2. Create the folder structure (do not create venv)
+3. Download sample images  
 
+```
+- [large_image](https://pixabay.com/photos/street-walking-photography-urban-4846133/) 5806 X 1280
+- [graffiti_dog](https://pixabay.com/photos/graffiti-dog-wall-artwork-urban-4389452/) 3397 X 3692
+```
+
+4. Create a repository
 Open a **git bash** terminal in the project root folder and follow these steps.
 
-**1. Create the folder structure**
-
 ```bash
-mkdir large_assets large_images tutorials workarea
+git init
 ```
 
 **2. Create and activate a virtual environment**
 
 ```bash
 python -m venv venv
-source venv/Scripts/activate
+source venv/Scripts/activate # windows
+source .venv/bin/activate    # Mac
 ```
 
 **3. Install dependencies**
 
 ```bash
-pip install pillow piexif numpy
+pip install pillow
 ```
 
 **4. Add your photos**
@@ -81,20 +69,15 @@ Copy a few of your own JPEG photos into the `large_assets/` folder. These will b
 
 **5. Open the project in VS Code**
 
-```bash
-code .
-```
-
 Make sure VS Code is using the Python interpreter from your `venv/` folder. You can check this in the bottom status bar or by opening the command palette and selecting **Python: Select Interpreter**.
+
+```bash
+which python
+```
 
 ## Running Scripts
 
 All Python scripts live in the `workarea/` folder. To run a script, make sure your virtual environment is activated, then:
-
-```bash
-cd workarea
-python script_name.py
-```
 
 Output images will be saved to the `large_images/` folder.
 
@@ -102,7 +85,7 @@ Output images will be saved to the `large_images/` folder.
 
 Tutorial documents are in the `tutorials/` folder. Work through them in order:
 
-1. **pillow-tutorial-01-image-basics.md** — Opening images, dimensions, resizing, EXIF data
+1. **01-pillow-basics.md** — Opening images, dimensions, resizing, EXIF data
 
 More tutorials will be added as the course progresses.
 

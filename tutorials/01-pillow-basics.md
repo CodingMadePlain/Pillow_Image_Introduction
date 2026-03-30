@@ -2,7 +2,7 @@
 
 ## What is Pillow?
 
-Pillow is a Python library for opening, manipulating, and saving image files. It is a modern, maintained fork of the original **PIL** (Python Imaging Library), which is no longer actively developed.
+Pillow is a Python library for opening, manipulating, and saving image files. It is a modern, maintained *fork* of the original **PIL** (Python Imaging Library), which is no longer actively developed.
 
 Even though we install **Pillow**, we import it using `PIL` in our code. This is because Pillow was designed as a drop-in replacement for the original PIL library, so it kept the same package name.
 
@@ -20,18 +20,31 @@ As the course progresses, we will combine Pillow with other libraries. You don't
 - **numpy** — used for advanced pixel-level manipulation, treating images as arrays of numbers
 - **piexif** — used for writing and editing EXIF metadata embedded in photos
 
+## images we are using
+
+```
+- [large image](https://pixabay.com/photos/street-walking-photography-urban-4846133/) 5806 X 1280
+- [graffiti-dog](https://pixabay.com/photos/graffiti-dog-wall-artwork-urban-4389452/) 3397 X 3692
+```
+
 ---
 
 ## Opening an Image and Reading Its Dimensions
 
 ```python
+# Import the Image module from the PIL package
 from PIL import Image
 
+# Open the image file and load it into memory
 img = Image.open("photo.jpg")
 
+# .size returns a tuple (width, height) — here we unpack it into two variables
 width, height = img.size
 
+# Print the width value
 print(f"Width: {width}")
+
+# Print the height value
 print(f"Height: {height}")
 ```
 
@@ -42,15 +55,20 @@ print(f"Height: {height}")
 ## Displaying an Image
 
 ```python
+# Import the Image module from the PIL package
 from PIL import Image
 
+# Open the image file and load it into memory
 img = Image.open("photo.jpg")
 
+# Unpack the width and height from the .size tuple
 width, height = img.size
 
+# Print the dimensions
 print(f"Width: {width}")
 print(f"Height: {height}")
 
+# Open the image in your system's default image viewer
 img.show()
 ```
 
@@ -61,12 +79,16 @@ img.show()
 ## Resizing an Image with resize()
 
 ```python
+# Import the Image module from the PIL package
 from PIL import Image
 
+# Open the image file
 img = Image.open("photo.jpg")
 
+# Resize to exactly 600x500 pixels — returns a NEW image, does not change the original
 resized_img = img.resize((600, 500))
 
+# Save the new resized image to a file
 resized_img.save("resized_photo.jpg")
 ```
 
@@ -81,12 +103,16 @@ The `.resize()` method takes a tuple of `(width, height)`, so the double parenth
 ## Resizing an Image with thumbnail()
 
 ```python
+# Import the Image module from the PIL package
 from PIL import Image
 
+# Open the image file
 img = Image.open("photo.jpg")
 
+# Shrink the image to fit within 600x500 — modifies the image IN PLACE, no new image returned
 img.thumbnail((600, 500))
 
+# Save the modified image
 img.save("thumbnail_photo.jpg")
 ```
 
@@ -103,18 +129,31 @@ This makes `.thumbnail()` the better choice when you want to scale down an image
 ## Reading EXIF Data
 
 ```python
+# Import the Image module from the PIL package
 from PIL import Image
+
+# Import TAGS — a dictionary that maps numeric EXIF tag IDs to readable names
 from PIL.ExifTags import TAGS
 
+# Open the image file
 img = Image.open("photo.jpg")
 
+# Get the raw EXIF data as a dictionary (keys are numeric tag IDs)
 exif_data = img._getexif()
 
+# Check if EXIF data exists before trying to loop through it
 if exif_data:
+
+    # Loop through each tag ID and its value in the EXIF dictionary
     for tag_id, value in exif_data.items():
+
+        # Convert the numeric tag ID to a human-readable name
         tag_name = TAGS.get(tag_id, tag_id)
+
+        # Print the tag name and its value
         print(f"{tag_name}: {value}")
 else:
+    # No EXIF data was found in this image
     print("No EXIF data found")
 ```
 
@@ -127,13 +166,19 @@ Not every image has EXIF data. Screenshots and images downloaded from the web of
 ## Reading Specific EXIF Tags
 
 ```python
+# Import the Image module from the PIL package
 from PIL import Image
+
+# Import the TAGS dictionary for converting numeric IDs to readable names
 from PIL.ExifTags import TAGS
 
+# Open the image file
 img = Image.open("photo.jpg")
 
+# Get the raw EXIF data
 exif_data = img._getexif()
 
+# Define a set of tag names we want to display — sets are faster for lookups than lists
 wanted_tags = {
     "ImageDescription",
     "Model",
@@ -142,9 +187,16 @@ wanted_tags = {
     "Artist"
 }
 
+# Check if EXIF data exists
 if exif_data:
+
+    # Loop through all EXIF tags
     for tag_id, value in exif_data.items():
+
+        # Convert the numeric ID to a readable name
         tag_name = TAGS.get(tag_id, tag_id)
+
+        # Only print this tag if it is in our wanted set
         if tag_name in wanted_tags:
             print(f"{tag_name}: {value}")
 else:
@@ -160,18 +212,28 @@ We use a set rather than a list because lookups in a set are faster. With a list
 ## Writing EXIF Data
 
 ```python
+# Import the Image module from the PIL package
 from PIL import Image
+
+# Import piexif — a separate library for writing EXIF data (pip install piexif)
 import piexif
 
+# Open the image file
 img = Image.open("photo.jpg")
 
+# Load existing EXIF data into a dictionary — if none exists, start with empty bytes
 exif_dict = piexif.load(img.info.get("exif", b""))
 
+# Add the Artist tag to the "0th" section (basic image info)
 exif_dict["0th"][piexif.ImageIFD.Artist] = "John Smith"
+
+# Add the ImageDescription tag to the "0th" section
 exif_dict["0th"][piexif.ImageIFD.ImageDescription] = "A sunny day at the park"
 
+# Convert the dictionary back into raw bytes that can be embedded in an image
 exif_bytes = piexif.dump(exif_dict)
 
+# Save the image with the updated EXIF data
 img.save("updated_photo.jpg", exif=exif_bytes)
 ```
 

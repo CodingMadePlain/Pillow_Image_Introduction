@@ -1,0 +1,5 @@
+# all images in large_assets/ directory
+large_assets/*
+
+# all images in large_images/ directory
+large_images/*
