@@ -1,4 +1,4 @@
-# Python Pillow for Photographers
+# How to Use Image Manipulation: On VS Code and Google Colab
 
 A beginner-friendly on Python Pillow and how to manipulate images. 
 
@@ -52,6 +52,7 @@ git init
 **2. Create and activate a virtual environment**
 
 ```bash
+# active the VE on  Git Bash
 python -m venv venv
 source venv/Scripts/activate # windows
 source .venv/bin/activate    # Mac
@@ -60,7 +61,10 @@ source .venv/bin/activate    # Mac
 **3. Install dependencies**
 
 ```bash
+# Install pillow and check
 pip install pillow
+pip list
+which python
 ```
 
 **4. Add your photos**
@@ -72,8 +76,19 @@ Copy a few of your own JPEG photos into the `large_assets/` folder. These will b
 Make sure VS Code is using the Python interpreter from your `venv/` folder. You can check this in the bottom status bar or by opening the command palette and selecting **Python: Select Interpreter**.
 
 ```bash
+# check where python is running using Git Bash
 which python
+
+# Save installations to requirements.txt
+pip freeze > requirements.txt
+
+# deactivate VE when finished
+deactivate
+
+# activate
 ```
+
+**deleteing a Venv**
 
 ## Running Scripts
 
@@ -83,12 +98,17 @@ Output images will be saved to the `large_images/` folder.
 
 ## Tutorials
 
-Tutorial documents are in the `tutorials/` folder. Work through them in order:
+- Tutorial documents are in the `tutorials/` folder. Work through them in order:
+- In the next lesson I will show how to use `Google Colab` for the same examples
 
-1. **01-pillow-basics.md** — Opening images, dimensions, resizing, EXIF data
+---
+### Introduction lesson
 
-More tutorials will be added as the course progresses.
+1. [Introduction on VS Code](workarea/01a-intro.md)
 
+
+
+---
 ## Useful Links
 
 - [Pillow Documentation](https://pillow.readthedocs.io/)
