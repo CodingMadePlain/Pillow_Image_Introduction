@@ -19,4 +19,4 @@ print(f"Width: {width}")
 print(f"Height: {height}")
 
 # show the image in a window
-#img.show()
+img.show()
