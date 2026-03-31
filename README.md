@@ -44,44 +44,6 @@ project-root/
 Rename the images if necessary and save `large_image.jpg`, `graffiti_dog.jpg` and `coffee_exif_image.jpg`
 into the `large_assets/` folder.
 
-## 2. Create and activate a Pyhton Virtual Environment**
-
-The `venv` Python module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their site directories. 
-
-`venv` are completely self-contained. No settings get written to some hidden registry, no system files get modified. Everything lives inside that one folder, so deleting the folder is a clean removal.
-
-```bash
-# active the VE on  Git Bash
-python -m venv .venv
-source .venv/Scripts/activate    # Windows (Git Bash)
-source .venv/bin/activate        # macOS
-```
-
-**Install dependencies**
-
-```bash
-# Install pillow and check
-pip install pillow
-pip install piexif
-
-pip list
-which python
-
-# when done
-deactivate
-
-# Save your packages for easy reinstall
-pip freeze > requirements.txt
-
-# Install from requirements
-pip install -r requirements.txt 
-
-# close the venv
-deactivate
-
-# Delete the venv (Only when you no longer require it)
-rm -rf .venv
-```
 
 ## Tutorials
 
