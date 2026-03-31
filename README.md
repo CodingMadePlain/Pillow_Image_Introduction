@@ -85,6 +85,9 @@ pip freeze > requirements.txt
 deactivate
 
 # activate
+
+# Delete the environment 
+rm -rf .venv
 ```
 
 **deleteing a Venv**
