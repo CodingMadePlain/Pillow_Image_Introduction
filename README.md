@@ -2,7 +2,7 @@
 
 Pillow is a Python library for opening, manipulating, and saving image files. It is a modern, maintained *fork* of the original **PIL** (Python Imaging Library), which is no longer actively developed.
 
-## What You Will Learn
+## 1. What You Will Learn
 
 This course begins with the fundamentals of image manipulation using the Pillow library — writing code by hand so you understand exactly what it does and why.
 
@@ -10,7 +10,7 @@ You'll then use AI tools to generate code for more complex tasks. Starting with 
 
 By the end, you'll be able to automate repetitive image tasks and confidently understand the code doing the work.
 
-## Prerequisites
+### Prerequisites
 
 1. **VS Code** with the Python extension - `https://code.visualstudio.com/`
 2. **Python 3.10+** installed on your system -`python.org`
@@ -18,22 +18,22 @@ By the end, you'll be able to automate repetitive image tasks and confidently un
 4. VS Code Python Extension
 5. Free Google account (gmail) - `Google Colab`
 
-## Project Structure
+### Project Structure
 
 ```
 project-root/
 ├── AGENTS.md          # AI agent instructions for code generation
 ├── README.md          # This file
-├── venv/*             # Python virtual environment
+├── .venv/*             # Python virtual environment
 ├── large_assets/      # Your source images (input)
 ├── large_images/      # Images produced by scripts (output)
 ├── tutorials/         # Tutorial documents
 ├── workarea/          # Python scripts
 ```
 
-## Getting Started
+### Getting Started
 1. Create a folder for this project - `pillow_Image_Introduction`
-2. Create the folder structure (do not create venv)
+2. Create the folder structure (do not create .venv)
 3. Download sample images  
 
 ```
@@ -42,39 +42,52 @@ project-root/
 - [coffee_exif_image.jpg](https://creativewords.co.uk/students/delegate/coffee_exif_image.jpg)
 ```
 
-4. Create a repository
-Open a **git bash** terminal in the project root folder and follow these steps.
+## 2. Create and activate a Pyhton Virtual Environment**
 
-```bash
-git init
-```
+The `venv` Python module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their site directories. 
 
-**2. Create and activate a virtual environment**
+`venv` are completely self-contained. No settings get written to some hidden registry, no system files get modified. Everything lives inside that one folder, so deleting the folder is a clean removal.
 
 ```bash
 # active the VE on  Git Bash
-python -m venv venv
-source venv/Scripts/activate # windows
-source .venv/bin/activate    # Mac
+python -m venv .venv
+source .venv/Scripts/activate    # Windows (Git Bash)
+source .venv/bin/activate        # macOS
 ```
 
-**3. Install dependencies**
+**Install dependencies**
 
 ```bash
 # Install pillow and check
 pip install pillow
-pip list
 pip install piexif
+
+pip list
 which python
+
+# when done
+deactivate
+
+# Save your packages for easy reinstall
+pip freeze > requirements.txt
+
+# Install from requirements
+pip install -r requirements.txt 
+
+# close the venv
+deactivate
+
+# Delete the venv (Only when you no longer require it)
+rm -rf .venv
 ```
 
-**4. Add your photos**
+**Add the photos**
 
 Copy a few of your own JPEG photos into the `large_assets/` folder. These will be used throughout the tutorials and assignments.
 
 **5. Open the project in VS Code**
 
-Make sure VS Code is using the Python interpreter from your `venv/` folder. You can check this in the bottom status bar or by opening the command palette and selecting **Python: Select Interpreter**.
+Make sure VS Code is using the Python interpreter from your `.venv/` folder. You can check this in the bottom status bar or by opening the command palette and selecting **Python: Select Interpreter**.
 
 ```bash
 # check where python is running using Git Bash
@@ -119,3 +132,4 @@ Output images will be saved to the `large_images/` folder.
 - [Pillow on PyPI](https://pypi.org/project/Pillow/)
 - [piexif Documentation](https://piexif.readthedocs.io/)
 - [Python Documentation](https://docs.python.org/3/)
+- [Venv - Python of Virtual Environments](https://docs.python.org/3/library/venv.html)

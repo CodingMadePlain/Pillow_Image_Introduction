@@ -17,9 +17,9 @@ This is a **Python Pillow tutorial** designed for **beginners**. The delegates a
 ## Python Environment
 
 - Always use a **virtual environment** (venv)
-- The venv is located in the project root as `venv/`
-- To create the venv: `python -m venv venv`
-- To activate in git bash: `source venv/Scripts/activate`
+- The venv is located in the project root as `.venv/`
+- To create the venv: `python -m venv .venv`
+- To activate in git bash: `source .venv/Scripts/activate`
 - Install dependencies with: `pip install pillow piexif numpy`
 - The preferred terminal is **git bash**, which provides a consistent experience across Mac and Windows
 - When giving terminal commands, use **git bash syntax** (forward slashes for paths, `source` for activation)
@@ -31,7 +31,7 @@ All paths are relative to the project root.
 ```
 project-root/
 ├── AGENTS.md
-├── venv/
+├── .venv/
 ├── large_assets/      # Source images for examples and assignments (input)
 ├── large_images/      # Images produced by AI-generated scripts (output)
 ├── tutorials/         # Tutorial documents and markdown files
@@ -49,10 +49,10 @@ When writing scripts that are run from the `workarea/` folder, use relative path
 
 ```python
 # Reading a source image
-img = Image.open("../large_assets/photo.jpg")
+img = Image.open("../large_assets/large_image.jpg")
 
 # Saving an output image
-img.save("../large_images/resized_photo.jpg")
+img.save("../large_images/resized_image.jpg")
 ```
 
 If a script is run from the project root instead, adjust accordingly. Add a comment at the top of each script indicating the expected working directory.
