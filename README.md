@@ -39,6 +39,7 @@ project-root/
 ```
 - [large_image](https://pixabay.com/photos/street-walking-photography-urban-4846133/) 5806 X 1280
 - [graffiti_dog](https://pixabay.com/photos/graffiti-dog-wall-artwork-urban-4389452/) 3397 X 3692
+- [coffee_exif_image.jpg](https://creativewords.co.uk/students/delegate/coffee_exif_image.jpg)
 ```
 
 4. Create a repository
@@ -63,6 +64,7 @@ source .venv/bin/activate    # Mac
 # Install pillow and check
 pip install pillow
 pip list
+pip install piexif
 which python
 ```
 

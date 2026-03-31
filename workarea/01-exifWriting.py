@@ -10,9 +10,6 @@ img = Image.open("large_assets/coffee_cup.jpg")
 # Load existing EXIF data into a dictionary — if none exists, start with empty bytes
 exif_dict = piexif.load(img.info.get("exif", b""))
 
-# Add the Artist tag to the "0th" section (basic image info)
-exif_dict["0th"][piexif.ImageIFD.Artist] = "Dele Oke"
-
 # Add the ImageDescription tag to the "0th" section
 exif_dict["0th"][piexif.ImageIFD.ImageDescription] = "A splendid cup of Coffee"
 

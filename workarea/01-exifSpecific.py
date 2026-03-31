@@ -5,7 +5,7 @@ from PIL import Image
 from PIL.ExifTags import TAGS
 
 # Open the image file
-img = Image.open("large_assets/coffee_cup.jpg")
+img = Image.open("large_assets/coffee_exif_image.jpg")
 
 # Get the raw EXIF data
 exif_data = img._getexif()
