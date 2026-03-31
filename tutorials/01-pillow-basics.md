@@ -64,7 +64,7 @@ img = Image.open("photo.jpg")
 # Unpack the width and height from the .size tuple
 width, height = img.size
 
-# Print the dimensions
+# Print the dimensions - f-string (short for formatted string).
 print(f"Width: {width}")
 print(f"Height: {height}")
 
@@ -173,7 +173,7 @@ from PIL import Image
 from PIL.ExifTags import TAGS
 
 # Open the image file
-img = Image.open("photo.jpg")
+img = Image.open("large_assets/coffee_cup.jpg")
 
 # Get the raw EXIF data
 exif_data = img._getexif()
@@ -225,16 +225,16 @@ img = Image.open("photo.jpg")
 exif_dict = piexif.load(img.info.get("exif", b""))
 
 # Add the Artist tag to the "0th" section (basic image info)
-exif_dict["0th"][piexif.ImageIFD.Artist] = "John Smith"
+exif_dict["0th"][piexif.ImageIFD.Artist] = "Dele Oke"
 
 # Add the ImageDescription tag to the "0th" section
-exif_dict["0th"][piexif.ImageIFD.ImageDescription] = "A sunny day at the park"
+exif_dict["0th"][piexif.ImageIFD.ImageDescription] = "A splendid cup of Coffee"
 
 # Convert the dictionary back into raw bytes that can be embedded in an image
 exif_bytes = piexif.dump(exif_dict)
 
 # Save the image with the updated EXIF data
-img.save("updated_photo.jpg", exif=exif_bytes)
+img.save("large_images/updated_photo.jpg", exif=exif_bytes)
 ```
 
 Pillow can read EXIF data but cannot write or modify it. For that, we use the `piexif` library.
