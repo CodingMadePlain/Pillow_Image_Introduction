@@ -5,7 +5,7 @@ from PIL import Image
 import piexif
 
 # Open the image file
-img = Image.open("large_assets/coffee_cup.jpg")
+img = Image.open("large_assets/coffee_exif_image.jpg")
 
 # Load existing EXIF data into a dictionary — if none exists, start with empty bytes
 exif_dict = piexif.load(img.info.get("exif", b""))

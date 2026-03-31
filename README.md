@@ -41,6 +41,8 @@ project-root/
 - [graffiti_dog](https://pixabay.com/photos/graffiti-dog-wall-artwork-urban-4389452/) 3397 X 3692
 - [coffee_exif_image.jpg](https://creativewords.co.uk/students/delegate/coffee_exif_image.jpg)
 ```
+Rename the images if necessary and save `large_image.jpg`, `graffiti_dog.jpg` and `coffee_exif_image.jpg`
+into the `large_assets/` folder.
 
 ## 2. Create and activate a Pyhton Virtual Environment**
 
@@ -81,38 +83,6 @@ deactivate
 rm -rf .venv
 ```
 
-**Add the photos**
-
-Copy a few of your own JPEG photos into the `large_assets/` folder. These will be used throughout the tutorials and assignments.
-
-**5. Open the project in VS Code**
-
-Make sure VS Code is using the Python interpreter from your `.venv/` folder. You can check this in the bottom status bar or by opening the command palette and selecting **Python: Select Interpreter**.
-
-```bash
-# check where python is running using Git Bash
-which python
-
-# Save installations to requirements.txt
-pip freeze > requirements.txt
-
-# deactivate VE when finished
-deactivate
-
-# activate
-
-# Delete the environment 
-rm -rf .venv
-```
-
-**deleteing a Venv**
-
-## Running Scripts
-
-All Python scripts live in the `workarea/` folder. To run a script, make sure your virtual environment is activated, then:
-
-Output images will be saved to the `large_images/` folder.
-
 ## Tutorials
 
 - Tutorial documents are in the `tutorials/` folder. Work through them in order:
@@ -121,9 +91,15 @@ Output images will be saved to the `large_images/` folder.
 ---
 ### Introduction lesson
 
-1. [Introduction on VS Code](workarea/01a-intro.md)
-
-
+0. [Introduction on VS Code](workarea/01a-intro.md)
+1. [Open Image](workarea/01-openImage.py)
+2. [Resize Image](workarea/01-resizeImage.py)
+3. [Thumbnail](workarea/01-thumbnail.py)
+4. [EXIF Data](workarea/01-exifData.py)
+5. [EXIF Specific](workarea/01-exifSpecific.py)
+6. [EXIF Writing](workarea/01-exifWriting.py)
+7. [Compress Image](workarea/01-compressImage.py)
+8. [Thumbnail EXIF](workarea/01-thumbnailExif.py)
 
 ---
 ## Useful Links
