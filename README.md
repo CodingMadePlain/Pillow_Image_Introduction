@@ -1,8 +1,6 @@
-# How to Use Image Manipulation: On VS Code and Google Colab
+# How to Edit & Manipulate Images in Python with Pillow (VS Code & Colab)
 
-A beginner-friendly on Python Pillow and how to manipulate images. 
-
-No prior programming experience is required.
+Pillow is a Python library for opening, manipulating, and saving image files. It is a modern, maintained *fork* of the original **PIL** (Python Imaging Library), which is no longer actively developed.
 
 ## What You Will Learn
 
@@ -18,6 +16,7 @@ By the end, you'll be able to automate repetitive image tasks and confidently un
 2. **Python 3.10+** installed on your system -`python.org`
 3. **Git Bash** terminal (provides a consistent experience on both Mac and Windows) - `git-scm.com/`
 4. VS Code Python Extension
+5. Free Google account (gmail) - `Google Colab`
 
 ## Project Structure
 
@@ -99,7 +98,7 @@ Output images will be saved to the `large_images/` folder.
 ## Tutorials
 
 - Tutorial documents are in the `tutorials/` folder. Work through them in order:
-- In the next lesson I will show how to use `Google Colab` for the same examples
+- Let us continue and I will show how to use `Google Colab` for the same examples as in the next lesson
 
 ---
 ### Introduction lesson
