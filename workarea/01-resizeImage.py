@@ -8,7 +8,7 @@ img = Image.open("large_assets/large_image.jpg")
 resized_img = img.resize((600, 500))
 
 # Save the new resized image to a file
-resized_img.save("resized_photo.jpg")
+resized_img.save("large_images/resized_photo.jpg")
 
 # Print size of resized image
 print("Resized image size:", resized_img.size)
