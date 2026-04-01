@@ -19,6 +19,6 @@ print(f"Width: {width}")
 print(f"Height: {height}")
 
 # show the image in a window
-#img.show()
+img.show()
 
 #Next, we will learn how to resize this image 01-resizeImage.py
