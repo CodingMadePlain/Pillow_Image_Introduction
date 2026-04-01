@@ -52,7 +52,7 @@ into the `large_assets/` folder.
 
 ---
 ### Introduction lesson
-
+0. [Python Virtual Environmemt](tutorials/python_virtual_env.md)
 0. [Introduction on VS Code](workarea/01a-intro.md)
 1. [Open Image](workarea/01-openImage.py)
 2. [Resize Image](workarea/01-resizeImage.py)
