@@ -46,7 +46,7 @@ python -m venv .venv
 ```bash
 python -m venv .venv        # create it
 source .venv/bin/activate   # activate it (Mac/Linux)
-.venv\Scripts\activate      # activate it (Windows)
+source .venv/Scripts/activate      # activate it (Windows)
 
 ## Check activation worked
 which python
